@@ -7,6 +7,10 @@ import { Item } from '../../shared';
   styleUrls: ['./item-detail.component.css']
 })
 export class ItemDetailComponent {
+  defaultValues = {
+    isAdrian: true
+  };
+
   originalName: string;
   selectedItem: Item;
   @Output() saved = new EventEmitter();
@@ -16,4 +20,9 @@ export class ItemDetailComponent {
     if (value) { this.originalName = value.name; }
     this.selectedItem = Object.assign({}, value);
   }
+
+  efg(): boolean {
+    return this.selectedItem.isAdrian || false;
+  }
+
 }

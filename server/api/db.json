@@ -3,23 +3,32 @@
     {
       "id": 1,
       "img": "number-1.png",
-      "name": "Item 1",
-      "description": "This is a description",
-      "featured": false
+      "name": "Dragon Ball Z",
+      "description": "Goku is my least favorite superhero.",
+      "featured": true,
+      "isAdrian": false
     },
     {
       "id": 2,
       "img": "number-2-blue-icon.png",
-      "name": "Item 2",
-      "description": "This is a description!",
-      "featured": false
+      "name": "Goku",
+      "description": "kamehahmeha",
+      "featured": false,
+      "isAdrian": false
     },
     {
       "id": 3,
       "img": "number-3-icon.png",
-      "name": "Item 3",
-      "description": "This is a lovely item",
-      "featured": true
+      "name": "Gohan",
+      "description": "Masenko!",
+      "featured": false,
+      "isAdrian": true
+    },
+    {
+      "isAdrian": false,
+      "name": "alice",
+      "description": "lam",
+      "id": 4
     }
   ],
   "widgets": [

@@ -1,3 +1,5 @@
+import { GizmoService } from './gizmo.service';
+import { GizmoComponent } from './gizmo/gizmo.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -16,6 +18,7 @@ import { WidgetsListComponent } from './widgets/widgets-list/widgets-list.compon
 import { WidgetDetailComponent } from './widgets/widget-detail/widget-detail.component';
 import { FeaturedWidgetComponent } from './widgets/featured-widget/featured-widget.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,8 @@ import { FeaturedWidgetComponent } from './widgets/featured-widget/featured-widg
     WidgetsComponent,
     WidgetsListComponent,
     WidgetDetailComponent,
-    FeaturedWidgetComponent
+    FeaturedWidgetComponent,
+    GizmoComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,7 @@ import { FeaturedWidgetComponent } from './widgets/featured-widget/featured-widg
     HttpModule,
     Ng2RestAppRoutingModule
   ],
-  providers: [ItemsService, WidgetsService],
+  providers: [ItemsService, WidgetsService, GizmoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

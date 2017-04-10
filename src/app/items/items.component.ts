@@ -48,6 +48,8 @@ export class ItemsComponent implements OnInit {
   }
 
   selectItem(item: Item) {
+    console.log(Date.now() + `::: selectItem(${item.name})`);
+    console.log(Date.now() + `::: isAdrian is ${item.isAdrian})`);
     this.selectedItem = item;
   }
 

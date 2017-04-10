@@ -4,4 +4,5 @@ export interface Item {
   name?: string;
   description?: string;
   featured?: boolean;
+  isAdrian?: boolean;
 }

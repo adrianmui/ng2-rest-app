@@ -1,0 +1,7 @@
+<div class="row" *ngFor="let thing of stuff">
+    <button class="mdl-chip mdl-chip--contact mdl-chip--deletable">
+    <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white"> {{ firstLetter(thing) }}</span>
+    <span class="mdl-chip__text"> Deletable Chip for: {{ thing }} </span>
+    <a href="#" class="mdl-chip__action"><i class="material-icons">cancel</i></a>
+</button>
+</div>
