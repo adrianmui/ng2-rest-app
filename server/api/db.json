@@ -5,7 +5,7 @@
       "img": "number-1.png",
       "name": "Dragon Ball Z",
       "description": "Goku is my least favorite superhero.",
-      "featured": true,
+      "featured": false,
       "isAdrian": false
     },
     {
@@ -13,8 +13,8 @@
       "img": "number-2-blue-icon.png",
       "name": "Goku",
       "description": "kamehahmeha",
-      "featured": false,
-      "isAdrian": false
+      "featured": true,
+      "isAdrian": true
     },
     {
       "id": 3,
