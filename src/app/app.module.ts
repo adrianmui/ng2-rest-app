@@ -1,3 +1,4 @@
+import { WidgetsComponent } from './widgets/widgets.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -18,7 +19,8 @@ import { FeaturedItemComponent } from './items/featured-item/featured-item.compo
     ItemsComponent,
     ItemsListComponent,
     ItemDetailComponent,
-    FeaturedItemComponent
+    FeaturedItemComponent,
+    WidgetsComponent
   ],
   imports: [
     BrowserModule,
