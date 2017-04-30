@@ -1,3 +1,4 @@
+import { ReviewsComponent } from './reviews/reviews.component';
 import { WidgetsService } from './widgets/widgets.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -22,7 +23,8 @@ import { FeaturedItemComponent } from './items/featured-item/featured-item.compo
     ItemsListComponent,
     ItemDetailComponent,
     FeaturedItemComponent,
-    WidgetsComponent
+    WidgetsComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,

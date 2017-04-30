@@ -7,7 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular 2 REST Website';
-  links = {
-    items: ['/items']
-  };
+  links = [
+    {
+      items: ['/items']
+    },
+    {
+      items: ['/widgets']
+    },
+    {
+      items: ['/reviews']
+    }];
 }

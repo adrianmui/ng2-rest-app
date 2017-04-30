@@ -21,7 +21,7 @@ export class WidgetsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('this.constructor.name', 'ngOnInit()');
+    console.log(this.constructor.name, 'ngOnInit()');
   }
 
   toggleWidget(widget: any): void {

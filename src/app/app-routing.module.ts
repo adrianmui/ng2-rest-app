@@ -1,3 +1,4 @@
+import { ReviewsComponent } from './reviews/reviews.component';
 import { WidgetsComponent } from './widgets/widgets.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path: 'items', component: ItemsComponent, children: [
     {path: 'featured/:id', component: FeaturedItemComponent}
   ]},
+  {path: 'reviews', component: ReviewsComponent, pathMatch: 'full'},
   {path: '**', redirectTo: '/items', pathMatch: 'full'}
 ];
 
