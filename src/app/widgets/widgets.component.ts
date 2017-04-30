@@ -1,3 +1,5 @@
+import { Widget } from './widgets.model';
+import { WidgetsService } from './widgets.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,35 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WidgetsComponent implements OnInit {
 
-  widgets: Array<Object> = [
-  {
-    'id': 1,
-    'img': 'assets/img/number-1.png',
-    'name': 'Widget 1',
-    'description': 'This is a description',
-    'featured': true
-  },
-  {
-    'id': 2,
-    'img': 'assets/img/number-2-blue-icon.png',
-    'name': 'Widget 2',
-    'description': 'This is a description!',
-    'featured': false
-  },
-  {
-    'id': 3,
-    'img': 'assets/img/number-3-icon.png',
-    'name': 'Widget 3',
-    'description': 'This is a lovely widget',
-    'featured': false
-  }];
+  widgets: Widget[] = this.widgetsService.data();
 
-  selectedWidget: any;
+  selectedWidget: Widget;
   selectedClass: any = {
     selected: undefined
   };
 
-  constructor() { console.log(this.constructor.name); }
+  constructor(private widgetsService: WidgetsService) {
+    console.log(this.constructor.name);
+  }
 
   ngOnInit() {
     console.log('this.constructor.name', 'ngOnInit()');
@@ -54,7 +37,7 @@ export class WidgetsComponent implements OnInit {
     }
   }
 
-  selWidget(widget:any): void {
+  selWidget(widget:Widget): void {
     this.selectedWidget = widget;
     this.selectedClass.selected = widget.id;
   }
