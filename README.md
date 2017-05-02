@@ -1,3 +1,8 @@
+# adrian
+
+### /items is the code-base that's already written
+### /widgets is the one that I am working on. I'm using this code-base as a simple review on ng2 basics.
+
 # ng2-rest-app
 
 A REST-ful master-detail application built using Angular 2 and angular-cli.
