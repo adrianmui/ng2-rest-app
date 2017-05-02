@@ -10,12 +10,16 @@ import { ItemsService } from './shared';
 import { WidgetsService } from './shared';
 
 import { ReviewsComponent} from './reviews';
-import { WidgetsComponent } from './widgets';
+
 import { AppComponent } from './app.component';
 import { ItemsComponent } from './items/items.component';
 import { ItemsListComponent } from './items/items-list/items-list.component';
 import { ItemDetailComponent } from './items/item-detail/item-detail.component';
 import { FeaturedItemComponent } from './items/featured-item/featured-item.component';
+
+import { WidgetsComponent } from './widgets';
+import { WidgetDetailsComponent } from './widgets';
+import { WidgetsListComponent } from './widgets';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,9 @@ import { FeaturedItemComponent } from './items/featured-item/featured-item.compo
     ItemDetailComponent,
     FeaturedItemComponent,
     WidgetsComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    WidgetDetailsComponent,
+    WidgetsListComponent,
   ],
   imports: [
     BrowserModule,

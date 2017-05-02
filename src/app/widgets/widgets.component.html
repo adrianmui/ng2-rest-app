@@ -2,7 +2,11 @@
 
     <!--repeat widgets-->
     <div class="mdl-cell mdl-cell--6-col" id="widget-list">
-        <div *ngFor="let widget of widgets" class="widget-card mdl-card mdl-shadow--2dp" (click)="toggleWidget(widget)" [ngClass]="{'selected': selectedClass.selected === widget.id }">
+        <app-widgets-list *ngFor="let widget of widgets" [widget]="widget" [ngClass]="{'selected': selectedClass.selected === widget.id }" (selected)="toggleWidget(widget)">
+        </app-widgets-list>
+
+
+        <!--<div *ngFor="let widget of widgets" class="widget-card mdl-card mdl-shadow--2dp" (click)="toggleWidget(widget)" [ngClass]="{'selected': selectedClass.selected === widget.id }">
             <div id='widget-{{widget.id}}'>
                 <div class="mdl-card__title">
                     <h2 class="mdl-card__title-text">{{widget.id }}_{{widget.name}}</h2>
@@ -11,11 +15,13 @@
                     {{widget.description}}
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 
 
     <div class="mdl-cell mdl-cell--6-col">
+        <!-- selected widget -->
+
         <div *ngIf="selectedWidget" class="widget-card mdl-card mdl-shadow--2dp" id="selected-widget-display">
             <div class="mdl-card__title">
                 <h4 class="text-white m-0">
