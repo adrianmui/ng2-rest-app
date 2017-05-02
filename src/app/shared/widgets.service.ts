@@ -1,4 +1,4 @@
-import { Widget } from './widgets.model';
+import { Widget } from './index';
 import { Injectable } from '@angular/core';
 @Injectable()
 

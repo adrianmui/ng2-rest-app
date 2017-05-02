@@ -1,6 +1,7 @@
-import { Widget } from './widgets.model';
-import { WidgetsService } from './widgets.service';
+
 import { Component, OnInit } from '@angular/core';
+import { WidgetsService } from './../shared';
+import { Widget } from './../shared';
 
 @Component({
   selector: 'app-widgets',
