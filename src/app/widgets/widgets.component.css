@@ -38,18 +38,6 @@
     color: white;
 }
 
-.selected {
-    background-color: #607D8B;
-}
-
-.selected {
-    color: white;
-}
-
-#selected-widget-display {
-    background-color: #8BC34A;
-}
-
 .text-white {
     color: white !important;
 }

@@ -1,5 +1,6 @@
 import { Widget } from './index';
 import { Injectable } from '@angular/core';
+import * as _ from 'lodash';
 @Injectable()
 
 export class WidgetsService {
@@ -28,4 +29,10 @@ export class WidgetsService {
   data(): Widget[] {
     return this.cache;
   }
+
+  removeOne(widget:Widget): Widget {
+
+    return _.remove(this.cache, widget);
+  }
+
 }

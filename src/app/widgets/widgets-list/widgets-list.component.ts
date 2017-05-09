@@ -15,18 +15,20 @@ import { Widget } from '../../shared';
 export class WidgetsListComponent implements OnInit {
 
   @Input() widget: Widget;
+  @Input() selectedClass: boolean;
   @Output() selected = new EventEmitter();
-
-  selectedClass: any = {
-    selected: undefined
-  };
+  @Output() deleted = new EventEmitter();
 
   constructor() { console.log(this.constructor.name); }
 
   ngOnInit() {
   }
 
-  adrian(event): void {
-    this.selected.emit('adrian has emitted event from WidgetsListComponent!');
+  select(event): void {
+    this.selected.emit(`${this.widget.name} has been selected as WidgetsListComponent!`);
+  }
+
+  delete(event): void {
+    this.deleted.emit(`${this.widget.name} has been deleted as WidgetsListComponent!`)
   }
 }

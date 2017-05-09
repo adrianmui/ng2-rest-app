@@ -1,0 +1,12 @@
+.widget-card.mdl-card {
+    width: 100%;
+    min-height: inherit;
+}
+
+#selected-widget-display {
+    background-color: #8BC34A;
+}
+
+.m-0 {
+    margin: 0;
+}

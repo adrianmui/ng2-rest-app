@@ -1,5 +1,5 @@
-<div class="widget-card mdl-card mdl-shadow--2dp" (click)="adrian(event)" [ngClass]="{'selected': selectedClass.selected === widget.id }">
-    <div id='widget-{{widget.id}}'>
+<div class="widget-card mdl-card mdl-shadow--2dp" [ngClass]="{'selected': selectedClass }">
+    <div id='widget-{{widget.id}}' (click)="select(event)">
         <div class="mdl-card__title">
             <h2 class="mdl-card__title-text">{{widget.id }}_{{widget.name}}</h2>
         </div>
@@ -7,4 +7,8 @@
             {{widget.description}}
         </div>
     </div>
+
+    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored delete" (click)="delete(event)">
+  <i class="material-icons">clear</i>
+</button>
 </div>

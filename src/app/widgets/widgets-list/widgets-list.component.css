@@ -38,11 +38,8 @@
     color: white;
 }
 
-.selected {
+.selected>* {
     background-color: #607D8B;
-}
-
-.selected {
     color: white;
 }
 
@@ -56,4 +53,10 @@
 
 .m-0 {
     margin: 0;
+}
+
+.delete {
+    position: absolute;
+    right: 0px;
+    top: 0px;
 }

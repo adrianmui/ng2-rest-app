@@ -2,51 +2,12 @@
 
     <!--repeat widgets-->
     <div class="mdl-cell mdl-cell--6-col" id="widget-list">
-        <app-widgets-list *ngFor="let widget of widgets" [widget]="widget" [ngClass]="{'selected': selectedClass.selected === widget.id }" (selected)="toggleWidget(widget)">
+        <app-widgets-list *ngFor="let widget of widgets" [widget]="widget" [selectedClass]="isSelected(widget)" (selected)="toggleWidget(widget)" (deleted)="removeWidget(widget)">
         </app-widgets-list>
-
-
-        <!--<div *ngFor="let widget of widgets" class="widget-card mdl-card mdl-shadow--2dp" (click)="toggleWidget(widget)" [ngClass]="{'selected': selectedClass.selected === widget.id }">
-            <div id='widget-{{widget.id}}'>
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">{{widget.id }}_{{widget.name}}</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    {{widget.description}}
-                </div>
-            </div>
-        </div>-->
     </div>
 
-
+    <!-- selected widget -->
     <div class="mdl-cell mdl-cell--6-col">
-        <!-- selected widget -->
-
-        <div *ngIf="selectedWidget" class="widget-card mdl-card mdl-shadow--2dp" id="selected-widget-display">
-            <div class="mdl-card__title">
-                <h4 class="text-white m-0">
-                    {{selectedWidget.name}}
-                </h4>
-            </div>
-            <div class="mdl-card__supporting-text">
-                {{selectedWidget.description}}
-            </div>
-            <div class="mdl-card__actions">
-                <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect" (click)="clearSelected()">Cancel</button>
-            </div>
-        </div>
-
-        <div *ngIf="!selectedWidget" class="widget-card mdl-card mdl-shadow--2dp" style="background-color: #607D8B;">
-            <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text" style="color: white">
-                    Select a Widget
-                </h2>
-            </div>
-            <div class="mdl-card__supporting-text" style="color: #E0E0E0">
-                SELECTED WIDGET
-            </div>
-            <div class="mdl-card__actions">
-            </div>
-        </div>
+        <app-widget-details [selectedWidget]="selectedWidget"></app-widget-details>
     </div>
 </div>

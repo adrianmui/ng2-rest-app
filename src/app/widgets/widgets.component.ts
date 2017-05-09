@@ -13,9 +13,7 @@ export class WidgetsComponent implements OnInit {
   widgets: Widget[] = this.widgetsService.data();
 
   selectedWidget: Widget;
-  selectedClass: any = {
-    selected: undefined
-  };
+  selectedId: number;
 
   constructor(private widgetsService: WidgetsService) {
     console.log(this.constructor.name);
@@ -25,7 +23,13 @@ export class WidgetsComponent implements OnInit {
     console.log(this.constructor.name, 'ngOnInit()');
   }
 
-  toggleWidget(widget: any): void {
+  removeWidget(widget: Widget): void {
+    console.log('hi');
+    this.widgetsService.removeOne(widget);
+    this.widgets = this.widgetsService.data();
+  }
+
+  toggleWidget(widget: Widget): void {
     console.log(`toggleWidget(${widget.name})`);
     if (this.selectedWidget) {
       if (this.selectedWidget.id === widget.id) {
@@ -38,13 +42,17 @@ export class WidgetsComponent implements OnInit {
     }
   }
 
-  selWidget(widget:Widget): void {
-    this.selectedWidget = widget;
-    this.selectedClass.selected = widget.id;
+  isSelected(widget: Widget): boolean {
+    return this.selectedId === widget.id;
   }
 
-  clearSelected(): void {
+  private selWidget(widget:Widget): void {
+    this.selectedWidget = widget;
+    this.selectedId = widget.id;
+  }
+
+  private clearSelected(): void {
       this.selectedWidget = undefined;
-      this.selectedClass.selected = undefined;
+      this.selectedId = undefined;
   }
 }
