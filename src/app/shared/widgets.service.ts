@@ -26,13 +26,24 @@ export class WidgetsService {
     'featured': false
   }];
 
+  private id: number = this.cache.length + 1;
+
   data(): Widget[] {
     return this.cache;
   }
 
   removeOne(widget:Widget): Widget {
-
     return _.remove(this.cache, widget);
+
   }
 
+  addOne(form: any): void {
+    const temp: Widget = {
+      id: this.id,
+      name: form.name,
+      description: form.desc
+    };
+    this.id += 1;
+    this.cache.push(temp);
+  }
 }

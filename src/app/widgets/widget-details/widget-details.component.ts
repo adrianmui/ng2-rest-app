@@ -1,5 +1,7 @@
+import { WidgetsService } from '../../shared/widgets.service';
+import { EventEmitter } from '@angular/forms/src/facade/async';
 import { Widget } from '../../shared';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-widget-details',
@@ -8,11 +10,31 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class WidgetDetailsComponent implements OnInit {
 
+  form: any = {
+    name: '',
+    desc: ''
+  };
+
   @Input() selectedWidget: Widget;
 
-  constructor() { }
+  @Output() cancel = new EventEmitter();
+  @Output() save = new EventEmitter();
+
+
+  constructor(private widgetService: WidgetsService) { console.log(this.constructor.name); }
 
   ngOnInit() {
+  }
+
+  clear():void {
+    Object.keys(this.form).forEach((key) => {
+      this.form[key] = '';
+    });
+  }
+
+  new(form): void {
+    this.widgetService.addOne(form);
+    this.clear();
   }
 
 }

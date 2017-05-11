@@ -1,3 +1,4 @@
+<!-- edit widget -->
 <div *ngIf="selectedWidget" class="widget-card mdl-card mdl-shadow--2dp" id="selected-widget-display">
     <div class="mdl-card__title">
         <h4 class="text-white m-0">
@@ -8,20 +9,35 @@
         {{selectedWidget.description}}
     </div>
     <div class="mdl-card__actions">
-        <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect" (click)="clearSelected()">Cancel</button>
+        <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect" (click)="clear(event)">Cancel</button>
     </div>
 </div>
 
+<!-- create widget-->
 <div *ngIf="!selectedWidget" class="widget-card mdl-card mdl-shadow--2dp" style="background-color: #607D8B;">
     <div class="mdl-card__title">
         <h2 class="mdl-card__title-text" style="color: white">
-            Select a Widget
+            Create your own a Widget
         </h2>
     </div>
     <div class="mdl-card__supporting-text" style="color: #E0E0E0">
-        SELECTED WIDGET
+        Type description here.
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input-field">
+            <input class="mdl-textfield__input border-color" type="text" id="name" [(ngModel)]="form.name" #name>
+            <label class="mdl-textfield__label text-color" for="name">WidgetName...</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input-field">
+            <input class="mdl-textfield__input border-color" type="text" [(ngModel)]="form.desc" #desc>
+            <label class="mdl-textfield__label text-color" for="desc">Description...</label>
+        </div>
+
     </div>
+
     <div class="mdl-card__actions">
+        <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect" (click)="clear()">Clear</button>
+
+        <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect" (click)="new(form)">Save</button>
     </div>
 
 </div>

@@ -2,12 +2,14 @@
 
     <!--repeat widgets-->
     <div class="mdl-cell mdl-cell--6-col" id="widget-list">
-        <app-widgets-list *ngFor="let widget of widgets" [widget]="widget" [selectedClass]="isSelected(widget)" (selected)="toggleWidget(widget)" (deleted)="removeWidget(widget)">
+        <app-widgets-list *ngFor="let widget of widgets" [widget]="widget" [selectedClass]="isSelected(widget)" (selected)="selectWidget(widget)" (deleted)="removeWidget(widget)">
         </app-widgets-list>
     </div>
 
-    <!-- selected widget -->
-    <div class="mdl-cell mdl-cell--6-col">
-        <app-widget-details [selectedWidget]="selectedWidget"></app-widget-details>
+    <!-- selected widget only appears if widgets list > 0 -->
+
+    <div *ngIf="widgets.length > 0" class="mdl-cell mdl-cell--6-col">
+        <app-widget-details [selectedWidget]="selectedWidget" (save)="saveWidget(selectedWidget)" (cancel)="cancelWidget()"></app-widget-details>
     </div>
+
 </div>

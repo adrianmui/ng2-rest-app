@@ -1,7 +1,7 @@
 export interface Widget {
   id: number;
-  img: string;
+  img?: string;
   name: string;
   description: string;
-  featured: boolean;
+  featured?: boolean;
 }
