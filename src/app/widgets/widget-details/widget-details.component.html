@@ -21,8 +21,6 @@
         </h2>
     </div>
     <div class="mdl-card__supporting-text" style="color: #E0E0E0">
-        Type description here.
-
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input-field">
             <input class="mdl-textfield__input border-color" type="text" id="name" [(ngModel)]="form.name" #name>
             <label class="mdl-textfield__label text-color" for="name">WidgetName...</label>
@@ -35,7 +33,7 @@
     </div>
 
     <div class="mdl-card__actions">
-        <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect" (click)="clear()">Clear</button>
+        <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect" (click)="clearForm()">Clear</button>
 
         <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect" (click)="new(form)">Save</button>
     </div>

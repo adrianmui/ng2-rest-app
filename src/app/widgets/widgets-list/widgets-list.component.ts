@@ -29,6 +29,6 @@ export class WidgetsListComponent implements OnInit {
   }
 
   delete(event): void {
-    this.deleted.emit(`${this.widget.name} has been deleted as WidgetsListComponent!`)
+    this.deleted.emit(`${this.widget.name} has been deleted as WidgetsListComponent!`);
   }
 }

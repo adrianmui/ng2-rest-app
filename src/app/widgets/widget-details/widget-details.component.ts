@@ -26,7 +26,11 @@ export class WidgetDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
-  clear():void {
+  clear(event): void {
+    this.cancel.emit(`${this.selectedWidget.name} has been cleared as WidgetDetailsComponent!`);
+  }
+
+  clearForm():void {
     Object.keys(this.form).forEach((key) => {
       this.form[key] = '';
     });
@@ -34,7 +38,7 @@ export class WidgetDetailsComponent implements OnInit {
 
   new(form): void {
     this.widgetService.addOne(form);
-    this.clear();
+    this.clearForm();
   }
 
 }
