@@ -1,0 +1,13 @@
+<div class="widget-card mdl-card mdl-shadow--2dp" id="selected-widget-display">
+    <div class="mdl-card__title">
+        <h4 class="text-white m-0">
+            {{selectedWidget.name}}
+        </h4>
+    </div>
+    <div class="mdl-card__supporting-text">
+        {{selectedWidget.description}}
+    </div>
+    <div class="mdl-card__actions">
+        <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect" (click)="clear(event)">Cancel</button>
+    </div>
+</div>

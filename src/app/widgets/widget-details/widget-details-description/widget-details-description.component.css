@@ -1,0 +1,33 @@
+.widget-card.mdl-card {
+    width: 100%;
+    min-height: inherit;
+}
+
+#selected-widget-display {
+    background-color: #8BC34A;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.text-color {
+    color: white;
+}
+
+.border-color {
+    border-color: #E0E0E0;
+}
+
+.input-field input[type=text]:focus+label {
+    color: #E0E0E0;
+}
+
+.input-field input[type=text]:focus {
+    color: white;
+    border-bottom: 0px;
+    /*border-bottom: 1px solid white;*/
+    -webkit-box-shadow: 0 1px 0 0 white;
+    -moz-box-shadow: 0 1px 0 0 white;
+    box-shadow: 0 1px 0 0 white;
+}

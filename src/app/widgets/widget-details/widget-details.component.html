@@ -1,41 +1,7 @@
 <!-- edit widget -->
-<div *ngIf="selectedWidget" class="widget-card mdl-card mdl-shadow--2dp" id="selected-widget-display">
-    <div class="mdl-card__title">
-        <h4 class="text-white m-0">
-            {{selectedWidget.name}}
-        </h4>
-    </div>
-    <div class="mdl-card__supporting-text">
-        {{selectedWidget.description}}
-    </div>
-    <div class="mdl-card__actions">
-        <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect" (click)="clear(event)">Cancel</button>
-    </div>
-</div>
+<app-widget-details-description *ngIf="selectedWidget" [selectedWidget]="selectedWidget">
+</app-widget-details-description>
 
 <!-- create widget-->
-<div *ngIf="!selectedWidget" class="widget-card mdl-card mdl-shadow--2dp" style="background-color: #607D8B;">
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text" style="color: white">
-            Create your own a Widget
-        </h2>
-    </div>
-    <div class="mdl-card__supporting-text" style="color: #E0E0E0">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input-field">
-            <input class="mdl-textfield__input border-color" type="text" id="name" [(ngModel)]="form.name" #name>
-            <label class="mdl-textfield__label text-color" for="name">WidgetName...</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input-field">
-            <input class="mdl-textfield__input border-color" type="text" [(ngModel)]="form.desc" #desc>
-            <label class="mdl-textfield__label text-color" for="desc">Description...</label>
-        </div>
-
-    </div>
-
-    <div class="mdl-card__actions">
-        <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect" (click)="clearForm()">Clear</button>
-
-        <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect" (click)="new(form)">Save</button>
-    </div>
-
-</div>
+<app-widget-details-form *ngIf="!selectedWidget" [form]="form">
+</app-widget-details-form>

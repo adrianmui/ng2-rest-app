@@ -1,3 +1,7 @@
+import { WidgetDetailsFormComponent } from './widgets/widget-details/widget-details-form';
+import {
+  WidgetDetailsDescriptionComponent
+} from './widgets/widget-details/widget-details-description/widget-details-description.component';
 
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -31,6 +35,8 @@ import { WidgetsListComponent } from './widgets';
     WidgetsComponent,
     ReviewsComponent,
     WidgetDetailsComponent,
+    WidgetDetailsDescriptionComponent,
+    WidgetDetailsFormComponent,
     WidgetsListComponent,
   ],
   imports: [

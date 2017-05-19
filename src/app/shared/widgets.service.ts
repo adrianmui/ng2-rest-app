@@ -37,13 +37,9 @@ export class WidgetsService {
 
   }
 
-  addOne(form: any): void {
-    const temp: Widget = {
-      id: this.id,
-      name: form.name,
-      description: form.desc
-    };
+  addOne(form: Widget): void {
+    form.id = this.id;
     this.id += 1;
-    this.cache.push(temp);
+    this.cache.push(form);
   }
 }

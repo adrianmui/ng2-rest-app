@@ -1,3 +1,4 @@
+import { NgForm } from '@angular/forms/src/directives';
 import { WidgetsService } from '../../shared/widgets.service';
 import { EventEmitter } from '@angular/forms/src/facade/async';
 import { Widget } from '../../shared';
@@ -10,12 +11,12 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 })
 export class WidgetDetailsComponent implements OnInit {
 
-  form: any = {
+  form: Widget = {
     name: '',
-    desc: ''
+    description: ''
   };
 
-  @Input() selectedWidget: Widget;
+  @Input() selectedWidget: Widget = undefined;
 
   @Output() cancel = new EventEmitter();
   @Output() save = new EventEmitter();
@@ -30,15 +31,8 @@ export class WidgetDetailsComponent implements OnInit {
     this.cancel.emit(`${this.selectedWidget.name} has been cleared as WidgetDetailsComponent!`);
   }
 
-  clearForm():void {
-    Object.keys(this.form).forEach((key) => {
-      this.form[key] = '';
-    });
-  }
-
-  new(form): void {
-    this.widgetService.addOne(form);
-    this.clearForm();
+  clearForm(): void {
+    Object.keys(this.form).forEach( (el) => this.form[el] = undefined);
   }
 
 }
