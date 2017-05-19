@@ -4,6 +4,9 @@ import { EventEmitter } from '@angular/forms/src/facade/async';
 import { Widget } from '../../shared';
 import { Component, Input, OnInit, Output } from '@angular/core';
 
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
+
 @Component({
   selector: 'app-widget-details',
   templateUrl: './widget-details.component.html',
@@ -25,6 +28,11 @@ export class WidgetDetailsComponent implements OnInit {
   constructor(private widgetService: WidgetsService) { console.log(this.constructor.name); }
 
   ngOnInit() {
+  }
+
+  submit(event): void {
+    console.log(`${this.constructor.name}: ${event}`);
+    this.save.emit(event);
   }
 
   clear(event): void {

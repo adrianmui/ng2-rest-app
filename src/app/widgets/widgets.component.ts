@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { WidgetsService } from './../shared';
 import { Widget } from './../shared';
 
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
+
 @Component({
   selector: 'app-widgets',
   templateUrl: './widgets.component.html',
@@ -10,7 +13,7 @@ import { Widget } from './../shared';
 })
 export class WidgetsComponent implements OnInit {
 
-  widgets: Widget[] = this.widgetsService.data();
+  widgets: Widget[] = [];
 
   selectedWidget: Widget;
   selectedId: number;
@@ -20,6 +23,7 @@ export class WidgetsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.widgetsService.loadData().subscribe(widgets => this.widgets = widgets);
   }
 
   removeWidget(widget: Widget): void {
@@ -43,7 +47,8 @@ export class WidgetsComponent implements OnInit {
   }
 
   saveWidget(widget: Widget): void {
-    return;
+    console.log('hahahaha', event);
+    this.widgets.push(widget);
   }
 
   cancelWidget(): void {

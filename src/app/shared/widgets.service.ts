@@ -1,45 +1,37 @@
+import { Headers, Http } from '@angular/http';
 import { Widget } from './index';
 import { Injectable } from '@angular/core';
 import * as _ from 'lodash';
+
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
+
+const BASE_URL = 'http://localhost:3000/widgets';
+const HEADERS = { headers: new Headers({'Content-Type' : 'application/json'}) };
+
 @Injectable()
-
 export class WidgetsService {
-  private cache: Widget[] = [{
-    'id': 1,
-    'img': 'assets/img/number-1.png',
-    'name': 'Widget 1',
-    'description': 'This is a description',
-    'featured': true
-  },
-  {
-    'id': 2,
-    'img': 'assets/img/number-2-blue-icon.png',
-    'name': 'Widget 2',
-    'description': 'This is a description!',
-    'featured': false
-  },
-  {
-    'id': 3,
-    'img': 'assets/img/number-3-icon.png',
-    'name': 'Widget 3',
-    'description': 'This is a lovely widget',
-    'featured': false
-  }];
+  private cache: Widget[];
 
-  private id: number = this.cache.length + 1;
+  private id: number = 0;
 
-  data(): Widget[] {
-    return this.cache;
+  constructor(private http: Http) {
+    console.log(this.constructor.name);
   }
 
-  removeOne(widget:Widget): Widget {
+  loadData(): any {
+    return this.http.get(`${BASE_URL}`)
+      .map(res => res.json());
+  }
+
+  removeOne(widget: Widget): Widget {
     return _.remove(this.cache, widget);
 
   }
 
-  addOne(form: Widget): void {
-    form.id = this.id;
-    this.id += 1;
-    this.cache.push(form);
+  createWidget(widget: Widget) {
+    return this.http.post(`${BASE_URL}`,
+    JSON.stringify(widget), HEADERS)
+      .map(res => res.json());
   }
 }

@@ -3,5 +3,5 @@
 </app-widget-details-description>
 
 <!-- create widget-->
-<app-widget-details-form *ngIf="!selectedWidget" [form]="form">
+<app-widget-details-form *ngIf="!selectedWidget" [form]="form" (send)="submit($event)">
 </app-widget-details-form>

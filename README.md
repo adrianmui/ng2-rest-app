@@ -1,7 +1,9 @@
 # adrian
 
 ### /items is the code-base that's already written
-### /widgets is the one that I am working on. I'm using this code-base as a simple review on ng2 basics.
+### /widgets and /reviews is the one that I am working on. I'm using this code-base as a simple review on ng2 basics.
+
+eventemitter, input, output, refactoring, forms, http ajax/crud, and observables
 
 # ng2-rest-app
 

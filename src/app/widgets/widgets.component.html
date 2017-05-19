@@ -9,7 +9,7 @@
     <!-- selected widget only appears if widgets list > 0 -->
 
     <div *ngIf="widgets.length > 0" class="mdl-cell mdl-cell--6-col">
-        <app-widget-details [selectedWidget]="selectedWidget" (save)="saveWidget(selectedWidget)" (cancel)="cancelWidget()"></app-widget-details>
+        <app-widget-details [selectedWidget]="selectedWidget" (save)="saveWidget($event)" (cancel)="cancelWidget()"></app-widget-details>
     </div>
 
 </div>

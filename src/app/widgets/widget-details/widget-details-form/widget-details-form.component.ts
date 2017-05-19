@@ -18,6 +18,7 @@ export class WidgetDetailsFormComponent implements OnInit {
   constructor(private widgetService: WidgetsService) { console.log(this.constructor.name); }
 
   ngOnInit() {
+    console.log('initializing');
   }
 
   clear(event): void {
@@ -31,8 +32,13 @@ export class WidgetDetailsFormComponent implements OnInit {
   new(form: NgForm): void {
     console.log(JSON
     .stringify(form.value));
-    this.widgetService.addOne(form.value);
     this.clearForm();
+    this.widgetService.createWidget
+    (form.value)
+      .subscribe(res => {
+        console.log('end of chain: ', res);
+        this.send.emit(res) ;
+      });
   }
 
 }
