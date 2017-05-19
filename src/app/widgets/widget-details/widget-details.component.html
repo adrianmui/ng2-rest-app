@@ -1,5 +1,5 @@
 <!-- edit widget -->
-<app-widget-details-description *ngIf="selectedWidget" [selectedWidget]="selectedWidget">
+<app-widget-details-description *ngIf="selectedWidget" [selectedWidget]="selectedWidget" (done)="clear(event)">
 </app-widget-details-description>
 
 <!-- create widget-->
