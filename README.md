@@ -1,10 +1,16 @@
+# Code that I wrote is in branch: 00-start
+
+### /items is the code-base that's already written
+### /widgets and /reviews is the one that I am working on. I'm using this code-base as a simple review on ng2 basics.
+
+eventemitter, input, output, refactoring, forms, http ajax/crud, and observables
+
 # ng2-rest-app
 
 A REST-ful master-detail application built using Angular 2 and angular-cli.
 
 ## Dependencies
 - You must have `node v >= 4.0` and `npm v >= 3` installed (via `brew install node` or [NodeJS.org](https://nodejs.org/en/));
-- Install Angular CLI via `npm i -g angular-cli`
 
 ### Getting Started
 
